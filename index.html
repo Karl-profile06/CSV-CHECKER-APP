@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daddy's Excel Manager</title>
+    <link rel="stylesheet" href="assets/stylecsv.css">
+</head>
+<body>
+
+<!-- =========================
+     SECTION 1: TXT/CSV → New Excel
+========================= -->
+<div class="container">
+    <h1>CSV/TXT to Excel</h1>
+
+    <div class="controls">
+        <input type="file" id="fileInput" accept=".txt" multiple>
+        <input type="text" id="excelTitle" placeholder="Excel file title">
+    </div>
+
+    <div class="buttons">
+        <button id="generateExcel">Generate Excel</button>
+        <button id="clearAll" class="danger">Clear All</button>
+    </div>
+</div>
+
+<br><br>
+
+<!-- =========================
+     SECTION 2: Update Existing Excel with Sum
+========================= -->
+<div class="container">
+    <h1>Update Excel with Sum</h1>
+
+    <div class="controls">
+        <input type="file" id="excelUpload" accept=".xlsx,.xls">
+        <input type="text" id="updateExcelTitle" placeholder="Updated Excel file title">
+    </div>
+
+    <div class="buttons">
+        <button id="uploadExcel">Upload Excel</button>
+        <button id="downloadUpdated" class="danger">Download Updated Excel</button>
+        <button id="clearExcel" class="danger">Clear All</button>
+    </div>
+</div>
+
+<br><br>
+
+<!-- =========================
+     SECTION 3: Upload Excel + Multiple EOD CSV/TXT
+========================= -->
+<div class="container">
+    <h1>Upload Excel then Add EOD Files</h1>
+
+    <div class="controls">
+        <!-- Upload Existing Excel -->
+        <label>Step 1: Upload Existing Excel</label>
+        <input type="file" id="excelUploadExisting" accept=".xlsx,.xls">
+
+        <!-- Upload multiple CSV/TXT files -->
+        <label>Step 2: Upload EOD CSV/TXT Files</label>
+        <input type="file" id="multiUploadFiles" accept=".csv,.txt" multiple>
+
+        <input type="text" id="multiUploadTitle" placeholder="File batch title">
+    </div>
+
+    <div class="buttons">
+        <button id="uploadExcelButton">Upload Excel</button>
+        <button id="uploadMultiple">Upload CSV/TXT Files</button>
+        <button id="downloadMultiple" class="danger">Download Combined Excel</button>
+        <button id="clearMultiple" class="danger">Clear All</button>
+    </div>
+</div>
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+<script src="assets/csvread.js"></script>
+<script src="assets/excelupdate.js"></script>
+<script src="assets/csveod.js"></script>
+
+</body>
+</html>
