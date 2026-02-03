@@ -1,0 +1,174 @@
+/* =========================
+   GLOBAL RESET & BASE STYLES
+========================= */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e3ebf5;
+    padding: 40px 20px;
+    color: #333;
+}
+
+/* =========================
+   CONTAINER STYLING
+========================= */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #222;
+}
+
+/* =========================
+   CONTROLS (INPUTS, FILES, TEXT)
+========================= */
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.controls label {
+    width: 100%;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+.controls input {
+    padding: 12px 15px;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.controls input[type="file"] {
+    padding: 8px 10px;
+}
+
+.controls input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+    outline: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    background: #28a745;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+button.danger {
+    background: #dc3545;
+}
+
+button.danger:hover {
+    background: #c82333;
+}
+
+/* =========================
+   MISC
+========================= */
+br {
+    line-height: 2rem;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* =========================
+   AYALA CHECKER BUTTON (TOP LEFT)
+========================= */
+#ayalaChecker {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+}
+
+/* Tooltip styling */
+#ayalaChecker .tooltip {
+    visibility: hidden;
+    width: 240px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 8px 10px;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 105%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    pointer-events: none; /* prevents tooltip from blocking clicks */
+}
+
+/* Show tooltip on hover */
+#ayalaChecker:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Hover effect for button */
+#ayalaChecker:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
