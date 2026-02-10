@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Daddy's Excel Manager</title>
+    <link rel="stylesheet" href="assets/stylecsv.css" />
+</head>
+<body>
+
+<!-- =========================
+     AYALA CHECKER LINK
+========================= -->
+<a href="https://ayala-checker.vercel.app/ayala.html" target="_blank" id="ayalaChecker">
+    Ayala CSV Reader/Converter
+    <span class="tooltip">Link to the CSV → TXT converter by Boss BAZEL</span>
+</a>
+
+<!-- =========================
+     MAIN CONTAINER
+========================= -->
+<div class="container">
+    <h1>CSV & EOD Excel Manager</h1>
+
+    <div class="controls">
+        <label for="mainCsvInput">Upload CSV to TXT converted files</label>
+        <input type="file" id="mainCsvInput" accept=".csv,.txt" multiple />
+    </div>
+
+    <div class="controls">
+        <label for="eodCsvInput">Upload EOD CSV / TXT files</label>
+        <input type="file" id="eodCsvInput" accept=".csv,.txt" multiple />
+    </div>
+
+    <div class="controls">
+        <label for="finalExcelTitle">Excel file title</label>
+        <input type="text" id="finalExcelTitle" placeholder="Excel file title" />
+    </div>
+
+    <div class="buttons">
+        <button id="processData">Process & Download Excel</button>
+        <button id="clearAll" class="danger">Clear All data</button>
+    </div>
+</div>
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+<script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+<script src="assets/mergedjs.js"></script>
+
+</body>
+</html>
