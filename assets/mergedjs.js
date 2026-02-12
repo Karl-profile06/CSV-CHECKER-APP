@@ -90,7 +90,13 @@ processBtn.addEventListener("click", async () => {
     // ======================= TOP FORMULA AND STYLING =======================
 
 mainFilesData.forEach(file => {
-    const sheet = workbook.addWorksheet(file.sheetName);
+    let sheet = workbook.getWorksheet(file.sheetName);
+
+    // If sheet does not exist yet, create it
+    if (!sheet) {
+        sheet = workbook.addWorksheet(file.sheetName);
+    }
+
 
     // Add main CSV data
     file.data.forEach((row, rIdx) => sheet.addRow(row));
